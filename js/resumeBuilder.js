@@ -20,65 +20,59 @@ var bio = {
     ]
 }
 
-// Work as dot notation.
-var workExperience = {};
-workExperience.position = "Staff Software Engineer";
-workExperience.employer = "National Instruments";
-workExperience.years = "August 2012 - August 2017";
-workExperience.city = "Austin, TX";
-
-// Education as bracket notation.
-var education = {};
-education["school"] = "Columbia University";
-education["degree"] = "MS in Electrical Engineering";
-education["years"] = "2007 - 2008";
-education["city"] = "New York, NY";
-
-
-// Header
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-// Contact Information
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.loc);
-$("#topContacts").append(formattedMobile);
-$("#topContacts").append(formattedEmail);
-$("#topContacts").append(formattedGithub);
-$("#topContacts").append(formattedLocation);
-
-var formattedPic = HTMLbioPic.replace("%data%", bio.picture);
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
-$("#header").append(formattedPic);
-$("#header").append(formattedWelcomeMsg);
-
-// Skills
-$("#header").append(HTMLskillsStart);
-for (var i = 0; i < bio.skills.length; i++) {
-    var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
-    $("#header").append(formattedSkills);
+var workExperience = {
+    "Jobs": 
+    [
+        {
+            "employer": "National Instruments",
+            "position": "Staff Software Engineer",
+            "years": "August 2012 - August 2017",
+            "city": "Austin, TX"
+        },
+        {
+            "employer": "Techno Inc",
+            "position": "Software Engineer",
+            "years": "March 2009 - August 2012",
+            "city": "New Hyde Park, NY"
+        },
+        {
+            "employer": "Kurzweil Technologies",
+            "position": "Software Engineer Intern",
+            "years": "Summer 2008",
+            "city": "Boston, MA"
+        }
+    ]
 }
 
-// Work Experience
-$("#workExperience").append(HTMLworkStart);
-var formattedEmployer = HTMLworkEmployer.replace("%data%", workExperience.employer);
-var formattedTitle = HTMLworkTitle.replace("%data%", workExperience.position);
-var formattedWorkDates = HTMLworkDates.replace("%data%", workExperience.years);
-var formattedWorkLocation = HTMLworkLocation.replace("%data%", workExperience.city);
-$("#workExperience").append(formattedEmployer + formattedTitle);
-$("#workExperience").append(formattedWorkDates);
-$("#workExperience").append(formattedWorkLocation);
-
-// Education
-$("#education").append(HTMLschoolStart);
-var formattedSchool = HTMLschoolName.replace("%data%", education["school"]);
-var formattedDegree = HTMLschoolDegree.replace("%data%", education["degree"]);
-var formattedSchoolDates = HTMLschoolDates.replace("%data%", education["years"]);
-var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education["city"]);
-$("#education").append(formattedSchool + formattedDegree);
-$("#education").append(formattedSchoolDates);
-$("#education").append(formattedSchoolLocation);
+var education = {
+    "schools":
+    [
+        {
+            "school": "Columbia University",
+            "city": "New York, NY",
+            "degree": "MS",
+            "major": "Electrical Engineering",
+            "years": "2007 - 2008"
+        },
+        {
+            "school": "ITESM",
+            "city": "Mexico City, Mexico",
+            "degree": "BS",
+            "major": "Mechatronics Engineering",
+            "years": "2002 - 2007"
+        }
+    ],
+    "onlineTraining":
+    [
+        {
+            "school": "Udacity",
+            "title": "Full Stack Development Nanodegree",
+            "years": "2017"
+        },
+        {
+            "school": "Stanford University",
+            "title": "Machine Learning",
+            "years": "2016"
+        }
+    ]
+}
