@@ -9,14 +9,14 @@ var bio = {
         "mobile": "914-450-9710",
         "email": "peretzman@caa.columbia.edu",
         "twitter": "",
-        "github": "https://github.com/peretz/",
+        "github": "peretz",
         "blog": "",
         "loc": "Austin, TX"
     },
-    "bioPic": "images/fry.jpg",
+    "picture": "images/fry.jpg",
     "welcomeMsg": "Welcome to my resume.",
     "skills": [
-        "Software Development", "C++", "Multithreading", "Full Stack Development"
+        "Software Development", "C++", "Multithreading", 
     ]
 }
 
@@ -33,3 +33,15 @@ $("#topContacts").append(formattedMobile);
 $("#topContacts").append(formattedEmail);
 $("#topContacts").append(formattedGithub);
 $("#topContacts").append(formattedLocation);
+
+var formattedPic = HTMLbioPic.replace("%data%", bio.picture);
+var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
+$("#header").append(formattedPic);
+$("#header").append(formattedWelcomeMsg);
+
+$("#header").append(HTMLskillsStart);
+for (var i = 0; i < bio.skills.length; i++) {
+    var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+    $("#header").append(formattedSkills);
+}
+
