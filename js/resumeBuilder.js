@@ -97,6 +97,11 @@ var education = {
     ]
 }
 
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").append(formattedName);
+$("#header").append(formattedRole);
+
 if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
 
@@ -125,3 +130,15 @@ function displayJob(activeJob) {
 }
 
 workExperience.Jobs.forEach(displayJob);
+
+// This is only for learning about return statements in functions.
+// $("#main").append(internationalizeButton);
+
+function inName(fullname) {
+    names = fullname.split(" ");
+    var formattedName = names[0].toLowerCase() + " " + names[1].toUpperCase();
+    formattedName = formattedName[0].toUpperCase() + formattedName.slice(1);
+    return formattedName;
+}
+
+$("#mapDiv").append(googleMap);
