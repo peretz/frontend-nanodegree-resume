@@ -106,11 +106,6 @@ if (bio.skills.length > 0) {
     }
 }
 
-function displayTask(activeTask) {
-    var formattedTask = HTMLworkTasksItem.replace("%data%", activeTask);
-    $(".tasks-entry:last").append(formattedTask);
-}
-
 function displayJob(activeJob) {
     var formattedEmployer = HTMLworkEmployer.replace("%data%", activeJob.employer);
     var formattedTitle = HTMLworkTitle.replace("%data%", activeJob.position);
@@ -123,7 +118,10 @@ function displayJob(activeJob) {
     $(".work-entry:last").append(formattedCity);
 
     $(".work-entry:last").append(HTMLworkTasksStart);
-    activeJob.tasks.forEach(displayTask);
+    activeJob.tasks.forEach(function (activeTask) {
+        var formattedTask = HTMLworkTasksItem.replace("%data%", activeTask);
+        $(".tasks-entry:last").append(formattedTask);
+    });
 }
 
 workExperience.Jobs.forEach(displayJob);
