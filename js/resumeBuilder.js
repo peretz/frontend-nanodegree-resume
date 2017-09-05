@@ -98,7 +98,6 @@ var education = {
 }
 
 if (bio.skills.length > 0) {
-
     $("#header").append(HTMLskillsStart);
 
     for(var i = 0; i < bio.skills.length; i++){
@@ -107,7 +106,12 @@ if (bio.skills.length > 0) {
     }
 }
 
-workExperience.Jobs.forEach(function(activeJob) {
+function displayTask(activeTask) {
+    var formattedTask = HTMLworkTasksItem.replace("%data%", activeTask);
+    $(".tasks-entry:last").append(formattedTask);
+}
+
+function displayJob(activeJob) {
     var formattedEmployer = HTMLworkEmployer.replace("%data%", activeJob.employer);
     var formattedTitle = HTMLworkTitle.replace("%data%", activeJob.position);
     var formattedYears = HTMLworkDates.replace("%data%", activeJob.years);
@@ -119,8 +123,7 @@ workExperience.Jobs.forEach(function(activeJob) {
     $(".work-entry:last").append(formattedCity);
 
     $(".work-entry:last").append(HTMLworkTasksStart);
-    activeJob.tasks.forEach(function(activeTask) {
-        var formattedTask = HTMLworkTasksItem.replace("%data%", activeTask);
-        $(".tasks-entry:last").append(formattedTask);
-    });
-});
+    activeJob.tasks.forEach(displayTask);
+}
+
+workExperience.Jobs.forEach(displayJob);
