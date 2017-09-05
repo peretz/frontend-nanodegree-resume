@@ -107,26 +107,20 @@ if (bio.skills.length > 0) {
     }
 }
 
-for(job in workExperience.Jobs) {
-    if (workExperience.Jobs.hasOwnProperty(job)) {
+workExperience.Jobs.forEach(function(activeJob) {
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", activeJob.employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%", activeJob.position);
+    var formattedYears = HTMLworkDates.replace("%data%", activeJob.years);
+    var formattedCity = HTMLworkLocation.replace("%data%", activeJob.city);
 
-        var activeJob = workExperience.Jobs[job];
-        var formattedEmployer = HTMLworkEmployer.replace("%data%", activeJob.employer);
-        var formattedTitle = HTMLworkTitle.replace("%data%", activeJob.position);
-        var formattedYears = HTMLworkDates.replace("%data%", activeJob.years);
-        var formattedCity = HTMLworkLocation.replace("%data%", activeJob.city);
+    $("#workExperience").append(HTMLworkStart);
+    $(".work-entry:last").append(formattedEmployer + formattedTitle);
+    $(".work-entry:last").append(formattedYears);
+    $(".work-entry:last").append(formattedCity);
 
-        $("#workExperience").append(HTMLworkStart);
-        $(".work-entry:last").append(formattedEmployer + formattedTitle);
-        $(".work-entry:last").append(formattedYears);
-        $(".work-entry:last").append(formattedCity);
-
-        $(".work-entry:last").append(HTMLworkTasksStart);
-        for (task in activeJob.tasks){
-            if (activeJob.tasks.hasOwnProperty(task)) {
-                var formattedTask = HTMLworkTasksItem.replace("%data%", activeJob.tasks[task]);
-                $(".tasks-entry:last").append(formattedTask);
-            }
-        }
-    }
-}
+    $(".work-entry:last").append(HTMLworkTasksStart);
+    activeJob.tasks.forEach(function(activeTask) {
+        var formattedTask = HTMLworkTasksItem.replace("%data%", activeTask);
+        $(".tasks-entry:last").append(formattedTask);
+    });
+});
