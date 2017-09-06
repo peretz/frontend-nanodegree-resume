@@ -8,16 +8,45 @@ var bio = {
     "contacts": {
         "mobile": "914-450-9710",
         "email": "peretzman@caa.columbia.edu",
-        "twitter": "",
-        "github": "peretz",
-        "blog": "",
+        "github": "github.com/peretz",
         "loc": "Austin, TX"
     },
-    "picture": "images/fry.jpg",
-    "welcomeMsg": "Welcome to my resume.",
+    "welcomeMsg": "Software Engineer with experience building scalable software architectures: Experienced with OOD and design patterns, data structures and algorithmic complexity, agile and lean development methodologies, and unit and system testing techniques. Great asset for a project that is scaling up and adding new features.",
     "skills": [
-        "Software Development", "C++", "Multithreading", 
+        "Languages (advanced): C/C++14, LabVIEW.",
+        "Languages (intermediate): python, HTML, CSS, javascript, SQL.",
+        "Tools: git, vim, make, bash, gcc/g++, Vagrant, etc",
+        "Unit testing: gtest, gmock."
+
     ]
+}
+
+bio.display = function() {
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedName);
+
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.loc);
+    $("#topContacts").append(formattedMobile);
+    $("#topContacts").append(formattedEmail);
+    $("#topContacts").append(formattedGithub);
+    $("#topContacts").append(formattedLocation);
+
+    var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
+    $("#header").append(formattedWelcomeMsg);
+
+    if (bio.skills.length > 0) {
+        $("#header").append(HTMLskillsStart);
+
+        for(var i = 0; i < bio.skills.length; i++){
+            var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+            $("#skills").append(formattedSkill);
+        }
+    }
 }
 
 var workExperience = {
@@ -90,14 +119,14 @@ var education = {
     "schools":
     [
         {
-            "school": "Columbia University",
+            "name": "Columbia University",
             "city": "New York, NY",
             "degree": "MS",
             "major": "Electrical Engineering",
             "years": "2007 - 2008"
         },
         {
-            "school": "ITESM",
+            "name": "Instituto Tecnologico y de Estudios Superiores de Monterrey (ITESM)",
             "city": "Mexico City, Mexico",
             "degree": "BS",
             "major": "Mechatronics Engineering",
@@ -107,32 +136,36 @@ var education = {
     "onlineTraining":
     [
         {
-            "school": "Udacity",
+            "name": "Udacity",
             "title": "Full Stack Development Nanodegree",
             "years": "2017"
         },
         {
-            "school": "Stanford University",
+            "name": "Stanford University",
             "title": "Machine Learning",
             "years": "2016"
         }
     ]
 }
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").append(formattedName);
-$("#header").append(formattedRole);
+education.display = function() {
+    education.schools.forEach(function(school) {
+        $("#education").append(HTMLschoolStart);
 
-if (bio.skills.length > 0) {
-    $("#header").append(HTMLskillsStart);
-
-    for(var i = 0; i < bio.skills.length; i++){
-        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-        $(".skills-h3").append(formattedSkill);
-    }
+        var formattedName = HTMLschoolName.replace("%data%", school.name);
+        var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
+        var formattedDates = HTMLschoolDates.replace("%data%", school.years);
+        var formattedLocation = HTMLschoolLocation.replace("%data%", school.city);
+        var formattedMajor = HTMLschoolMajor.replace("%data%", school.major);
+        $(".education-entry:last").append(formattedName + formattedDegree);
+        $(".education-entry:last").append(formattedDates);
+        $(".education-entry:last").append(formattedLocation);
+        $(".education-entry:last").append(formattedMajor);
+    });
 }
 
+bio.display();
 workExperience.display();
+education.display();
 
 $("#mapDiv").append(googleMap);

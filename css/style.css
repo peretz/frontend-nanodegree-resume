@@ -1,7 +1,5 @@
 body,
 div,
-ul,
-li,
 p,
 h1,
 h2,
@@ -12,6 +10,13 @@ h6 {
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
+}
+
+ul,
+li
+{
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .clear-fix {
@@ -58,7 +63,6 @@ h3,
 h4,
 h5 {
   padding: 10px 5%;
-
 }
 
 
@@ -113,7 +117,6 @@ a {
 }
 
 .white-text {
-  font-weight: bold;
   color: #fff;
 }
 
@@ -145,7 +148,6 @@ a {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  padding: 10px;
 }
 
 .center-content {
