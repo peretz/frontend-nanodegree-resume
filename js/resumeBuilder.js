@@ -131,14 +131,4 @@ function displayJob(activeJob) {
 
 workExperience.Jobs.forEach(displayJob);
 
-// This is only for learning about return statements in functions.
-// $("#main").append(internationalizeButton);
-
-function inName(fullname) {
-    names = fullname.split(" ");
-    var formattedName = names[0].toLowerCase() + " " + names[1].toUpperCase();
-    formattedName = formattedName[0].toUpperCase() + formattedName.slice(1);
-    return formattedName;
-}
-
 $("#mapDiv").append(googleMap);
