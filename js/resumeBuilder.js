@@ -64,6 +64,28 @@ var workExperience = {
     ]
 }
 
+workExperience.display = function() {
+    function displayJob(activeJob) {
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", activeJob.employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", activeJob.position);
+        var formattedYears = HTMLworkDates.replace("%data%", activeJob.years);
+        var formattedCity = HTMLworkLocation.replace("%data%", activeJob.city);
+
+        $("#workExperience").append(HTMLworkStart);
+        $(".work-entry:last").append(formattedEmployer + formattedTitle);
+        $(".work-entry:last").append(formattedYears);
+        $(".work-entry:last").append(formattedCity);
+
+        $(".work-entry:last").append(HTMLworkTasksStart);
+        activeJob.tasks.forEach(function (activeTask) {
+            var formattedTask = HTMLworkTasksItem.replace("%data%", activeTask);
+            $(".tasks-entry:last").append(formattedTask);
+        });
+    }
+
+    workExperience.Jobs.forEach(displayJob);
+}
+
 var education = {
     "schools":
     [
@@ -111,24 +133,6 @@ if (bio.skills.length > 0) {
     }
 }
 
-function displayJob(activeJob) {
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", activeJob.employer);
-    var formattedTitle = HTMLworkTitle.replace("%data%", activeJob.position);
-    var formattedYears = HTMLworkDates.replace("%data%", activeJob.years);
-    var formattedCity = HTMLworkLocation.replace("%data%", activeJob.city);
-
-    $("#workExperience").append(HTMLworkStart);
-    $(".work-entry:last").append(formattedEmployer + formattedTitle);
-    $(".work-entry:last").append(formattedYears);
-    $(".work-entry:last").append(formattedCity);
-
-    $(".work-entry:last").append(HTMLworkTasksStart);
-    activeJob.tasks.forEach(function (activeTask) {
-        var formattedTask = HTMLworkTasksItem.replace("%data%", activeTask);
-        $(".tasks-entry:last").append(formattedTask);
-    });
-}
-
-workExperience.Jobs.forEach(displayJob);
+workExperience.display();
 
 $("#mapDiv").append(googleMap);
