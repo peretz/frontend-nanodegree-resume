@@ -1,4 +1,4 @@
-# Full Stack Foundations: Final Project - Restaurant and menu management system.
+# JavaScript Basics: Final Project - Dynamic implementation of my resume.
 
 This project is based on Udacity's Javascript Basics final project. The objective
 of this project is learning the key concepts around javaScript which includes:
