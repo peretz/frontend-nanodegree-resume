@@ -22,7 +22,7 @@ There are five files:
 * **js/jQuery.js**: The jQuery library.
 * **css/style.css**: Contains all of the CSS needed to style the page.
 
-## Display the resume
+## Displaying the resume
 
 1. Branch this repository to your machine.
 2. Open the index.html file in your browser (e.g. file://your-local-path/index.html).
