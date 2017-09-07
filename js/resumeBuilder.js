@@ -136,19 +136,27 @@ var education = {
     "onlineTraining":
     [
         {
-            "name": "Udacity",
-            "title": "Full Stack Development Nanodegree",
-            "years": "2017"
+            "title": "Full Stack Web Developer Nanodegree",
+            "school": "Udacity",
+            "dates": "2017",
+            "url": ""
         },
         {
-            "name": "Stanford University",
+            "title": "Functional Programming Principles in Scala",
+            "school": "École Polytechnique Fédérale de Lausane (Coursera)",
+            "dates": "2017",
+            "url": ""
+        },
+        {
             "title": "Machine Learning",
-            "years": "2016"
+            "school": "Stanford University (Coursera)",
+            "dates": "2016",
+            "url": ""
         }
     ]
 }
 
-education.display = function() {
+education.displaySchools = function() {
     education.schools.forEach(function(school) {
         $("#education").append(HTMLschoolStart);
 
@@ -164,8 +172,22 @@ education.display = function() {
     });
 }
 
+education.displayOnlineTraining = function() {
+    education.onlineTraining.forEach(function(onlineTraining) {
+        $("#onlinetraining").append(HTMLonlineStart);
+
+        var formattedTitle = HTMLonlineTitle.replace("%data%", onlineTraining.title);
+        var formattedSchool = HTMLonlineSchool.replace("%data%", onlineTraining.school);
+        var formattedDates = HTMLonlineDates.replace("%data%", onlineTraining.dates);
+        var formattedUrl = HTMLonlineURL.replace("%data%", onlineTraining.url);
+        $(".onlinetraining-entry:last").append(formattedTitle + formattedSchool + formattedDates);
+        $(".onlinetraining-entry:last").append(formattedUrl);
+    });
+}
+
 bio.display();
 workExperience.display();
-education.display();
+education.displaySchools();
+education.displayOnlineTraining();
 
 $("#mapDiv").append(googleMap);
