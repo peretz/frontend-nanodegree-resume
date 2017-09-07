@@ -59,6 +59,7 @@ var workExperience = {
             "city": "Austin, TX",
             "tasks": 
             [
+                "Coordinated the design, implementation, testing and documentation of a maintenance release.",
                 "Integrated application, driver and hardware code in order to source and measure data.",
                 "Combined a finite and a continuous scatter-gather-list, resulting in a 10x reduction of memory usage.",
                 "Using a multithreaded solution, I ported a hardware feature to software.",
