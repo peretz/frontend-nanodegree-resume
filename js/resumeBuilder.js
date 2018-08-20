@@ -8,6 +8,7 @@ var bio = {
     "contacts": {
         "mobile": "+52-1-55-8426-0918",
         "email": "jaime@intermed.com.mx",
+        "immigrationStatus": "US resident",
         "github": "github.com/peretz",
         "loc": "Mexico City, Mexico"
     },
@@ -29,10 +30,12 @@ bio.display = function() {
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedImmigrationStatus = HTMLimmigrationStatus.replace("%data%", bio.contacts.immigrationStatus);
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.loc);
     $("#topContacts").append(formattedMobile);
     $("#topContacts").append(formattedEmail);
+    $("#topContacts").append(formattedImmigrationStatus);
     $("#topContacts").append(formattedGithub);
     $("#topContacts").append(formattedLocation);
 
