@@ -10,7 +10,7 @@ var bio = {
         "email": "jaime@intermed.com.mx",
         "immigrationStatus": "US resident",
         "github": "github.com/peretz",
-        "loc": "Mexico City, Mexico"
+        "loc": "Austin, TX"
     },
     "welcomeMsg": "Software Engineer with experience building scalable software architectures: Experienced with OOD and design patterns, data structures and algorithmic complexity, agile and lean development methodologies, and unit and system testing techniques. Great asset for a project that is scaling up and adding new features.",
     "skills": [
