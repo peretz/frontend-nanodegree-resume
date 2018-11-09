@@ -4,7 +4,7 @@ This is empty on purpose! Your code to build the resume will go here.
 
 var bio = {
     "name": "Jaime Peretzman",
-    "role": "Software Engineer - Product Manager",
+    "role": "Software Engineer / Product Manager",
     "contacts": {
         "mobile": "+52-1-55-8426-0918",
         "email": "jaime@intermed.com.mx",
@@ -12,13 +12,12 @@ var bio = {
         "github": "github.com/peretz",
         "loc": "Austin, TX"
     },
-    "welcomeMsg": "Software Engineer with experience building scalable software architectures: Experienced with OOD and design patterns, data structures and algorithmic complexity, agile and lean development methodologies, and unit and system testing techniques. Great asset for a project that is scaling up and adding new features.",
+    "welcomeMsg": "Software Engineer / Product Manager passionate about the healthcare industry and the current challenges in it.",
     "skills": [
         "Languages (advanced): C/C++14, LabVIEW.",
         "Languages (intermediate): python, HTML, CSS, javascript, SQL.",
-        "Tools: git, vim, make, bash, gcc/g++, Vagrant, etc",
-        "Unit testing: gtest, gmock."
-
+        "Familiar with Agile and Lean development",
+        "Experience with OOD and Design Patterns"
     ]
 }
 
@@ -56,16 +55,15 @@ var workExperience = {
     "Jobs": 
     [
         {
-            "employer": "Clínica de Medicina Interdisciplinaria",
-            "position": "Operations and Business Development Manager",
+            "employer": "Clínica Intermed",
+            "position": "CIO and CMO",
             "years": "September 2017 - Present",
             "city": "Mexico City, Mexico",
             "tasks": 
             [
-                "Designed and implemented a calendar application, which costs were 90% cheaper than the next proposal.",
+                "Proposed and implemented a calendar application to schedule patient appointments. This application was 90% cheaper than the next proposal and free up 35% of the receptionists’ time.",
                 "Using web-scraping techniques, gathered a database of medical specialists and created several outbound marketing campaigns. These campaigns generated an ROI of 205x.",
-                "Adapted a home mesh network to our business, reducing 75% equipment costs.",
-                "Optimized Google Adwords for an inbound campaign, the ROI was 120x."
+                "Adapted a home mesh network to our business, reducing 75% equipment costs."
             ]
         },
         {
@@ -75,12 +73,10 @@ var workExperience = {
             "city": "Austin, TX",
             "tasks": 
             [
-                "Coordinated the design, implementation, testing and documentation of a maintenance release.",
-                "Integrated application, driver and hardware code in order to source and measure data.",
-                "Combined a finite and a continuous scatter-gather-list, resulting in a 10x reduction of memory usage.",
-                "Using a multithreaded solution, I ported a hardware feature to software.",
-                "Reduced DMA streaming complexity from O(n2) to O(n/k), improving performance up to 1000%.",
-                "Adapted flash memory code for its reuse with the old driver stack."
+                "Managed the full life-cycle of a software maintenance release. In this release, I used Kanban iterations and a project wiki to coordinate the different stakeholders. My efforts parallelized testing efforts and allowed an 8-month release cycle.",
+                "Using three threads, I ported a HW feature to SW, considerably reducing the workload for the HW team.",
+                "Mentored a junior engineer, who was a poor performer and who have had two previous mentors. After mentoring him, he was able to properly contribute to the team.",
+                "Reduced DMA streaming complexity from O(n2) to O(n/k), improving performance up to 1000%."
             ]
         },
         {
@@ -91,9 +87,7 @@ var workExperience = {
             "tasks": 
             [
                 "Designed a user-friendly installer; the installer solved 15% of common technical support inquiries.",
-                "Re-architected code for its use with a new servo controller.",
-                "Created and documented a motion control API; this API allows full control of our control board.",
-                "Implemented software “best practices” such as source control, bug tracking, smoke testing, and periodic software releases."
+                "Re-architected code for its use with a new servo controller. This reduced software development time more than 70%."
             ]
 
         },
@@ -104,7 +98,7 @@ var workExperience = {
             "city": "Boston, MA",
             "tasks": 
             [
-                "Using gradient descent, I optimized the calibration parameters for an OCR application."
+                "Using gradient descent, I optimized the calibration parameters for an OCR application. This solution was 50% more accurate and 80% faster than the previous approach."
             ]
         }
     ]
@@ -152,6 +146,12 @@ var education = {
     ],
     "onlineTraining":
     [
+        {
+            "title": "Introduction to Relation Databases",
+            "school": "Stanford University",
+            "dates": "2017",
+            "url": ""
+        },
         {
             "title": "Full Stack Web Developer Nanodegree",
             "school": "Udacity",
